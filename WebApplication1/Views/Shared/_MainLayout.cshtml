@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Thư Viện UTC</title>
+    @*Thư viện *@
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="~/css/lmscustom.css" rel="stylesheet" />
+    <script href="../Scripts/modernizr-2.8.3.js"></script>
+    <script href="../Scripts/bootstrap.min.js"></script>
+    <script href="../Scripts/jquery-3.4.1.min.js"></script>
+
+</head>
+<body style="padding:unset">
+    <div>
+        <div style="background-color:#d9534f;">
+            <div style="background-color:#292b2c; height:8px; width:450px">
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            @*
+                Nút Trang chủ
+            *@
+            <span class="icon">
+                <i class="fas fa-book-open"></i>
+            </span>
+            @Html.ActionLink("Thư viện UTC", "Home", "Main", new { area = "" }, new { @class = "navbar-brand" })
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item btn-sm btn-dark">
+                        @*
+                            Nút Home
+                        *@
+                        <i class="fas fa-home"></i>
+                        @Html.ActionLink("Trang chủ", "Home", "Main", new { @class = "nav-link icon", style="display:inline" })
+                    </li>
+                    <li class="nav-item btn-sm btn-dark">
+                        @*
+                            Nút Chi Tiết
+                        *@
+                        <i class="fas fa-address-card"></i>
+                        @Html.ActionLink("Chi Tiết", "About", "Main", new { @class = "nav-link icon", style="display:inline" })
+                    </li>
+                    <li class="nav-item btn-sm btn-dark">
+                        @*
+                            Nút Liên Hệ
+                        *@
+                        <i class="fas fa-id-badge"></i>
+                        @Html.ActionLink("Liên Hệ", "Contact", "Main", new { @class = "nav-link icon", style="display:inline" })
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav justify-content-end">
+                    <li class="nav-item btn-sm btn-dark">
+                        @*
+                            Nút Login
+                        *@
+                        <i class="fas fa-sign-in-alt"></i>
+                        @Html.ActionLink("Đăng Nhập", "Login", "Main", new { @class = "nav-link icon", style="display:inline" })
+                    </li>
+                </ul>
+            </div>
+        </nav>
+       
+    </div>
+    <div style="padding-left:20px; padding-right:20px;">
+        @RenderBody()
+    </div>
+    <div>
+        <footer>
+            <div style="" class="card text-center text-white bg-dark">
+                <div class="card-header">
+                    Cảm ơn đã ghé thăm chúng tôi
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Nhóm 10</h5>
+                    <div style="width: auto;" class="form-group">
+                        <span>
+                            <i class="fab fa-facebook-square"></i>
+                        </span>
+                        <span>
+                            <i class="fab fa-twitter-square"></i>
+                        </span>
+                        <span>
+                            <i class="fab fa-instagram"></i>
+                        </span>
+                    </div>
+                </div>
+                <p>&copy; @DateTime.Now.Year - Thư viện UTC</p>
+            </div>
+        </footer>
+    </div>
+    <div style="background-color:#d9534f;">
+        <div style="background-color:#292b2c; height:8px; width:450px">
+        </div>
+    </div>
+    
+</body>
+</html>

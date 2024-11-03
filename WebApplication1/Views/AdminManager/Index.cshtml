@@ -1,0 +1,148 @@
+﻿@model IEnumerable<WebApplication1.Models.Book>;
+
+@{
+    ViewBag.Title = "Thông tin Tài liệu";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Danh sách tài liệu</h4>
+<hr />
+<div class="btn btn-sm btn-primary" data-toggle='tooltip' title='Add book'>
+    <i class="far fa-plus-square"></i>
+    @Html.ActionLink("Thêm", "Create", "AdminManager", new { @class = "", style = "text-decoration:none; color: white" })
+</div>
+
+<br />
+<br />
+
+@*External stylesheet for data table plugins*@
+<link rel="stylesheet" , href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" />
+<link rel="stylesheet" , href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" />
+<table width="100%" class="table-sm table-hover table-bordered" id="example">
+    <thead class="bg-success text-light">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookAuthor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookCopies)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookPub)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookPubName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookISBN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Copyright)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateAdded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>
+                BookTitle 
+            </th>
+            <th>
+                BookCategory
+            </th>
+            <th>
+                BookAuthor
+            </th>
+            <th>
+                BookCopies
+            </th>
+            <th>
+                BookPub
+            </th>
+            <th>
+                BookPubName
+            </th>
+            <th>
+                BookISBN
+            </th>
+            <th>
+                Copyright
+            </th>
+            <th>
+                DateAdded
+            </th>
+            <th>
+                Status
+            </th>
+
+        </tr>
+    </tbody>
+</table>
+<br />
+
+@*Java scripts*@
+@section scripts{
+    @*External scripts for data table plugins*@
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $('#example').DataTable({
+            "ajax": {
+                "url": "/AdminManager/GetAll",
+                "type": "get",
+                "datatype": "json"
+            },
+            "columns": [
+                { "data": "bookTitle" },
+                { "data": "bookCategory" },
+                { "data": "bookAuthor" },
+                { "data": "bookCopies" },
+                { "data": "bookPub" },
+                { "data": "bookPubName" },
+                { "data": "bookISBN" },
+                { "data": "copyright" },
+                { "data": "dateAdded" },
+                { "data": "status" },
+                {
+                    "data": "bookId", "render": function (idhere) {
+                        return " <a class='btn btn-sm btn-dark text-light' data-toggle='tooltip' title='Edit' href='@Url.Action("Edit", "AdminManager")/" + idhere + "'> <i class='fas fa-edit'></i> Sửa</a> <a class='btn btn-sm btn-warning text-light', style='margin-left:px' data-toggle='tooltip' title='Details' href='@Url.Action("Details", "AdminManager")/" + idhere + "' > <i class='fas fa-info-circle iconop'></i> Chi tiết</a > <a class='btn btn-sm btn-danger text-light', style='margin-left:px' data-toggle='tooltip' title='Delete book' href='@Url.Action("Delete", "AdminManager")/" + idhere + "' > <i class='fas fa-trash iconop'></i> Xóa</a > ";
+                    },
+                    "orderable": false,
+                    "width": "245px"
+                }
+            ],
+            "language": {
+                "emptyTable": "No data found, Add new items"
+            }
+        });
+
+    </script>
+}
+
+@if (ViewBag.OperationMsg != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.OperationMsg");
+            window.location.href = "/AdminManager/OperationAlert";
+        };
+    </script>
+}
+
+

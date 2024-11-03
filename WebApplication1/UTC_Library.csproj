@@ -1,0 +1,94 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>f2095788-b95a-4b7e-b89a-ffef0d57782c</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Content\bootstrap-grid.css" />
+    <None Include="wwwroot\Content\bootstrap-grid.css.map" />
+    <None Include="wwwroot\Content\bootstrap-grid.min.css" />
+    <None Include="wwwroot\Content\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\Content\bootstrap-reboot.css" />
+    <None Include="wwwroot\Content\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\Content\bootstrap-reboot.min.css" />
+    <None Include="wwwroot\Content\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\Content\bootstrap.css" />
+    <None Include="wwwroot\Content\bootstrap.css.map" />
+    <None Include="wwwroot\Content\bootstrap.min.css" />
+    <None Include="wwwroot\Content\bootstrap.min.css.map" />
+    <None Include="wwwroot\Content\brands.css" />
+    <None Include="wwwroot\Content\brands.min.css" />
+    <None Include="wwwroot\css\fontawesome-all.css" />
+    <None Include="wwwroot\css\fontawesome-all.min.css" />
+    <None Include="wwwroot\css\fontawesome.css" />
+    <None Include="wwwroot\css\fontawesome.min.css" />
+    <None Include="wwwroot\css\lmscustom.css" />
+    <None Include="wwwroot\Content\regular.css" />
+    <None Include="wwwroot\Content\regular.min.css" />
+    <None Include="wwwroot\Content\Site.css" />
+    <None Include="wwwroot\Content\solid.css" />
+    <None Include="wwwroot\Content\solid.min.css" />
+    <None Include="wwwroot\Content\svg-with-js.css" />
+    <None Include="wwwroot\Content\svg-with-js.min.css" />
+    <None Include="wwwroot\Content\themes\base\accordion.css" />
+    <None Include="wwwroot\Content\themes\base\all.css" />
+    <None Include="wwwroot\Content\themes\base\autocomplete.css" />
+    <None Include="wwwroot\Content\themes\base\base.css" />
+    <None Include="wwwroot\Content\themes\base\button.css" />
+    <None Include="wwwroot\Content\themes\base\core.css" />
+    <None Include="wwwroot\Content\themes\base\datepicker.css" />
+    <None Include="wwwroot\Content\themes\base\dialog.css" />
+    <None Include="wwwroot\Content\themes\base\draggable.css" />
+    <None Include="wwwroot\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <None Include="wwwroot\Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <None Include="wwwroot\Content\themes\base\jquery-ui.css" />
+    <None Include="wwwroot\Content\themes\base\jquery-ui.min.css" />
+    <None Include="wwwroot\Content\themes\base\menu.css" />
+    <None Include="wwwroot\Content\themes\base\progressbar.css" />
+    <None Include="wwwroot\Content\themes\base\resizable.css" />
+    <None Include="wwwroot\Content\themes\base\selectable.css" />
+    <None Include="wwwroot\Content\themes\base\selectmenu.css" />
+    <None Include="wwwroot\Content\themes\base\slider.css" />
+    <None Include="wwwroot\Content\themes\base\sortable.css" />
+    <None Include="wwwroot\Content\themes\base\spinner.css" />
+    <None Include="wwwroot\Content\themes\base\tabs.css" />
+    <None Include="wwwroot\Content\themes\base\theme.css" />
+    <None Include="wwwroot\Content\themes\base\tooltip.css" />
+    <None Include="wwwroot\Content\v4-shims.css" />
+    <None Include="wwwroot\Content\v4-shims.min.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\AdminTransaction\" />
+  </ItemGroup>
+
+</Project>
