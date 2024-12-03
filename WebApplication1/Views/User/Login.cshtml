@@ -1,0 +1,87 @@
+﻿@model WebApplication1.Models.User
+@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Đăng nhập</title>
+    @*Thư viện *@
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="~/css/lmscustom.css" rel="stylesheet" />
+    <script src="../Scripts/modernizr-2.8.3.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+</head>
+<body style="padding:unset">
+    @using (Html.BeginForm("Validate", "User"))
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            <br />
+
+
+            <br />
+            <div id="login" class="col-md-4 offset-sm-4">
+                <div class="card">
+                    <div class="card-header">Đăng nhập</div>
+                    <div class="card-body offset-sm-1">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <form class="container-fluid">
+                            <div class="form-group">
+                                <span>Email</span>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                    @Html.EditorFor(model => model.UserEmail, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter the email" } })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
+
+                            </div>
+
+                            <div class="form-group">
+                                <span>Mật khẩu</span>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-unlock"></i>
+                                    </span>
+                                    @Html.EditorFor(model => model.UserPass, new { htmlAttributes = new { @class = "form-control ", placeholder = "Enter the password", type = "password" } })
+                                </div>
+                                @Html.ValidationMessageFor(model => model.UserPass, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <p class="text-danger">@ViewBag.Message</p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="col-10 offset-1">
+                            <button type="submit" value="Login" class="btn btn-sm btn-block btn-success">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Đăng nhập
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+
+</body>
+</html>
+<style>
+
+    #login {
+        margin-top: 100px;
+        margin-bottom: 200px;
+    }
+</style>

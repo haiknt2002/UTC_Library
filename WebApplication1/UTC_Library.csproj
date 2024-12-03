@@ -80,6 +80,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.14">
       <PrivateAssets>all</PrivateAssets>
@@ -89,6 +90,8 @@
 
   <ItemGroup>
     <Folder Include="Views\AdminTransaction\" />
+    <Folder Include="Views\UserManager\" />
+    <Folder Include="Views\UserTransaction\" />
   </ItemGroup>
 
 </Project>

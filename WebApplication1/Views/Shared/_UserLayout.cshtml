@@ -15,7 +15,7 @@
 </head>
 <body style="padding:unset">
     <div>
-        <div style="background-color:#d9534f;">
+        <div style="background-color:#5cb8;">
             <div style="background-color:#5cb85c; height:8px; width:450px">
             </div>
         </div>
@@ -23,7 +23,7 @@
             <span class="icon">
                 <i class="fas fa-book-open"></i>
             </span>
-            @Html.ActionLink("UrLMS", "MenuBorrow", "Borrow", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("UrLMS", "MenuBorrow", "UserManager", new { area = "" }, new { @class = "navbar-brand" })
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -32,31 +32,29 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item btn-sm btn-danger">
                         <i class="fas fa-home"></i>
-                        @Html.ActionLink("Home", "UserHome", "Borrow",null, new { @class = "nav-link icon",style="display:inline" })
+                        @Html.ActionLink("Home", "UserHome", "UserManager",null, new { @class = "nav-link icon",style="display:inline" })
                     </li>
                     <li class="nav-item btn-sm btn-danger">
                         <i class="fas fa-address-card"></i>
-                        @Html.ActionLink("About", "UserAbout", "Borrow",null,  new { @class = "nav-link icon" ,style="display:inline"  })
+                        @Html.ActionLink("About", "UserAbout", "UserManager",null,  new { @class = "nav-link icon" ,style="display:inline"  })
                     </li>
                     <li class="nav-item btn-sm btn-danger">
                         <i class="fas fa-id-badge"></i>
-                        @Html.ActionLink("Contact", "UserContact", "Borrow",null, new { @class = "nav-link icon" ,style="display:inline"  })
+                        @Html.ActionLink("Contact", "UserContact", "UserManager",null, new { @class = "nav-link icon" ,style="display:inline"  })
                     </li>
                 </ul>
                 <ul class="navbar-nav justify-content-end" style="padding-right:50px">
-                    <li class="" style="padding-left:5px; padding-right:5px">
-                        @Html.ActionLink("Borrow", "MenuBorrow", "Borrow", new { area = "" }, new { @class = "nav-item btn-sm btn-primary text-light", style = "text-decoration:none;" })
-                    </li>
+                    
                     <li class="" style="padding-left:5px; padding-right:5px">
 
-                        @Html.ActionLink("Requested", "MenuRequested", "Borrow", null, new { @class = "nav-item btn-sm btn-primary text-light", style = "text-decoration:none;" })
+                        @Html.ActionLink("Requested", "MenuRequested", "UserManager", null, new { @class = "nav-item btn-sm btn-primary text-light", style = "text-decoration:none;" })
                     </li>
                     <li style="padding-left: 5px; padding-right: 5px ">
-                        @Html.ActionLink("Received", "MenuReceived", "Borrow", null, new { @class = "nav-item btn-sm btn-primary text-light", style = "text-decoration:none;" })
+                        @Html.ActionLink("Received", "MenuReceived", "UserManager", null, new { @class = "nav-item btn-sm btn-primary text-light", style = "text-decoration:none;" })
                         
                     </li>
                     <li class="" style="padding-left:5px; padding-right:10px">
-                        @Html.ActionLink("Rejected", "MenuRejected", "Borrow", null, new { @class = "nav-item btn-sm btn-primary text-light", style = "text-decoration:none;" })
+                        @Html.ActionLink("Rejected", "MenuRejected", "UserManager", null, new { @class = "nav-item btn-sm btn-primary text-light", style = "text-decoration:none;" })
                         
                     </li>
                 </ul>
@@ -99,7 +97,7 @@
             </div>
         </footer>
     </div>
-    <div style="background-color:#d9534f;">
+    <div style="background-color:#5cb8;">
         <div style="background-color:#5cb85c; height:8px; width:450px">
         </div>
     </div>

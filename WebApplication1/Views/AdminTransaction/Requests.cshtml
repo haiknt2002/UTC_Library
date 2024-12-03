@@ -73,7 +73,7 @@
                     { "data": "tranDate" },
                     { "data": "userName" },
                     {
-                        "data": "TranId", "render": function (idhere) {
+                        "data": "tranId", "render": function (idhere) {
 
                             return " <a onclick='acceptRequest()' class='btn btn-sm btn-primary text-light' data-toggle='tooltip' title='Accept book request' href='@Url.Action("AcceptRequest", "AdminTransaction")?tranId=" + idhere + "'> <i class='fas fa-check-circle'></i> Accept</a> <a onclick='rejectRequest()' class='btn btn-sm btn-danger text-light' data-toggle='tooltip' title='Reject book request' style='margin-left:px' href='@Url.Action("RejectRequest", "AdminTransaction")?tranId=" + idhere + "'> <i class='fas fa-times-circle'></i></i> Reject</a>";
                         },
