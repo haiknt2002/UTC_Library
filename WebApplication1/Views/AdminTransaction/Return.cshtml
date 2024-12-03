@@ -67,12 +67,12 @@
                     "datatype": "json",
                 },
                 "columns": [
-                    { "data": "BookTitle" },
-                    { "data": "BookISBN" },
-                    { "data": "TranDate" },
-                    { "data": "UserName" },
+                    { "data": "bookTitle" },
+                    { "data": "bookISBN" },
+                    { "data": "tranDate" },
+                    { "data": "userName" },
                     {
-                        "data": "TranId", "render": function (idhere) {
+                        "data": "tranId", "render": function (idhere) {
 
                             return " <a onclick='acceptReturn()' class='btn btn-sm btn-primary text-light' data-toggle='tooltip' title='Accept return request' href='@Url.Action("AcceptReturn", "AdminTransaction")?tranId=" + idhere + "'> <i class='fas fa-check-circle'></i> Accept</a> ";
                         },

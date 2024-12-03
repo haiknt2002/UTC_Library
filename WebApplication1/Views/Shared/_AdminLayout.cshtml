@@ -61,8 +61,16 @@
                         @Html.ActionLink("Return", "Return", "AdminTransaction", null, new { @class = "nav-item btn-sm btn-primary text-light", style = "text-decoration:none;" })
                     </li>
                 </ul>
-                <span class="text-light" style="padding-top:1px; padding-right:15px">Welcome back Admin!!</span>
-                <ul class="navbar-nav justify-content-end">
+                <span class="text-light" style="padding-top:1px; padding-right:15px">
+                    @if (ViewBag.AdminName != null)
+                    {
+                        <span>Xin chào </span> @ViewBag.AdminName <span> !!!! </span>
+                    }
+                    else
+                    {
+                        <span>Xin chào Admin!!!</span>
+                    }
+                </span>                <ul class="navbar-nav justify-content-end">
                     <li class="nav-item btn btn-sm btn-success">
                         <i class="fas fa-sign-out-alt"></i>
                         @Html.ActionLink("Đăng xuất", "Logout", "Admin", null, new { @class = "nav-link", onclick = "return alert('Logged out successfully');" , style = "display:inline" })

@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Tìm Sách";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <!-- Thanh tìm kiếm -->
+    <div class="search-bar mb-4">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Tìm sách theo tên, tác giả, thể loại..." />
+            <button class="btn btn-primary" type="button">
+                <i class="fas fa-search"></i> Tìm kiếm
+            </button>
+        </div>
+    </div>
+
+    <!-- Danh sách sách -->
+    <div class="book-list row">
+        <!-- Mẫu sách (có thể sao chép để hiển thị nhiều sách) -->
+        @for (int i = 0; i < 20; i++)  // Dùng vòng lặp tạm để demo (sau này sẽ thay thế bằng dữ liệu thực)
+        {
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/150x200" class="card-img-top" alt="Book Image" />
+                    <div class="card-body">
+                        <h5 class="card-title">Tên Sách @i</h5>
+                        <p class="card-text">Tác giả: Tác giả @i</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-primary btn-sm">Xem Chi Tiết</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- CSS tùy chỉnh -->
+<style>
+    .search-bar .input-group {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-body h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    .book-list .card {
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .book-list .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+</style>

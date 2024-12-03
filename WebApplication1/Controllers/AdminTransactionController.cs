@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -13,7 +14,20 @@ namespace UTC_Library.Controllers
         {
             _context = context;
         }
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            base.OnActionExecuting(context);
 
+            var adminId = HttpContext.Session.GetInt32("AdminId");
+            if (adminId == null)
+            {
+                context.Result = RedirectToAction("Login", "Main");
+            }
+            else
+            {
+                ViewBag.AdminName = _context.Admins.Find(adminId)?.AdminName ?? "Admin";
+            }
+        }
         // Returns admin request view, here admin can accept and reject the book requests
         public IActionResult Requests()
         {
