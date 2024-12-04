@@ -45,6 +45,9 @@
                 </ul>
                 <ul class="navbar-nav justify-content-end" style="padding-right:50px">
                     <li class="" style="padding-left:5px; padding-right:5px">
+                        @Html.ActionLink("Người dùng", "UserList", "AdminManager", new { area = "" }, new { @class = "nav-item btn-sm btn-primary text-light", style = "text-decoration:none;" })
+                    </li>
+                    <li class="" style="padding-left:5px; padding-right:5px">
                         @Html.ActionLink("Tài liệu", "Index", "AdminManager", new { area = "" }, new { @class = "nav-item btn-sm btn-primary text-light", style = "text-decoration:none;" })
                     </li>
                     <li class="" style="padding-left: 5px; padding-right: 5px">

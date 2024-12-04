@@ -1,0 +1,106 @@
+﻿@model IEnumerable<WebApplication1.Models.User>;
+
+@{
+    ViewBag.Title = "Thông tin Người dùng";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Danh sách người dùng</h4>
+<hr />
+@*<div class="btn btn-sm btn-primary" data-toggle='tooltip' title='Add book'>
+    <i class="far fa-plus-square"></i>
+    @Html.ActionLink("Thêm", "Create", "AdminManager", new { @class = "", style = "text-decoration:none; color: white" })
+</div>*@
+
+<br />
+<br />
+
+@*External stylesheet for data table plugins*@
+<link rel="stylesheet" , href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" />
+<link rel="stylesheet" , href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" />
+<table width="100%" class="table-sm table-hover table-bordered" id="example">
+    <thead class="bg-success text-light">
+        <tr>
+            <th>Id</th>
+            <th>Họ tên</th>
+            <th>Giới tính</th>
+            <th>Chức vụ</th>
+            <th>Số hiệu</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<br />
+
+@*Java scripts*@
+@section scripts{
+    @*External scripts for data table plugins*@
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
+
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $('#example').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "/AdminManager/GetUser",
+                "type": "GET",
+                "datatype": "json"
+            },
+            "columns": [
+                { "data": "userId" },
+                { "data": "userName" },
+                { "data": "userGender" },
+                { "data": "userDep" },
+                { "data": "userAdmNo" },
+                { "data": "userEmail" },
+                { "data": "userPass" },
+                {
+                    "data": "userId",
+                    "render": function (data) {
+                        return `
+                            <a class='btn btn-sm btn-dark text-light' title='Sửa' href='#'>
+                                <i class='fas fa-edit'></i> Sửa
+                            </a>
+                            <a class='btn btn-sm btn-warning text-light' title='Chi tiết' href='#'>
+                                <i class='fas fa-info-circle'></i> Chi tiết
+                            </a>
+                            <a class='btn btn-sm btn-danger text-light' title='Xóa' href='#'>
+                                <i class='fas fa-trash'></i> Xóa
+                            </a>
+                        `;
+                    },
+                    "orderable": false,
+                    "width": "245px"
+                }
+            ],
+            "language": {
+                "emptyTable": "Không có dữ liệu"
+            }
+        });
+        $.getJSON("/AdminManager/GetUser", function (data) {
+            console.log(data);
+        });
+
+    </script>
+}
+
+@if (ViewBag.OperationMsg != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.OperationMsg");
+            window.location.href = "/AdminManager/OperationAlert";
+        };
+    </script>
+}
+
+

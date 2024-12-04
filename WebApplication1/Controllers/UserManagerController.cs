@@ -115,7 +115,7 @@ namespace UTC_Library.Controllers
                     }
                     else
                     {
-                        HttpContext.Session.SetString("requestMsg", "Sorry you cant take, Book copy is zero");
+                        HttpContext.Session.SetString("requestMsg", "Không thể mượn, số lượng sách bằng 0.");
                     }
                     ViewBag.requestMsg = HttpContext.Session.GetString("requestMsg");
                 }

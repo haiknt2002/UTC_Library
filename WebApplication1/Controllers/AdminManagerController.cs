@@ -31,12 +31,20 @@ namespace UTC_Library.Controllers
         {
             return View();
         }
-
+        public IActionResult UserList()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult GetUser()
+        {
+            var user = _context.Users.ToList();
+            return Json(new { data = user });
+        }
         [HttpGet]
         public IActionResult GetAll()
         {
             var books = _context.Books.ToList();
-            Console.WriteLine("called");
             return Json(new { data = books });
         }
 
