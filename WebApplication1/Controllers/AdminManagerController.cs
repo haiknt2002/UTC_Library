@@ -136,14 +136,31 @@ namespace UTC_Library.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            var book = _context.Books.Find(id); // Thay đổi từ bookDb.AdminManager sang _context.Books
-            if (book != null)
+            var book = _context.Books.Find(id); // Tìm sách theo ID
+            if (book == null)
             {
-                _context.Books.Remove(book); // Xóa sách khỏi DbContext
-                _context.SaveChanges();
+                return NotFound(); // Nếu sách không tồn tại, trả về lỗi 404
             }
+
+            // Kiểm tra xem sách có đang được mượn không
+            var isBookBorrowed = _context.Transactions
+                .Any(t => t.BookId == id && t.TranStatus != "Returned"); // "Returned" là trạng thái khi sách đã được trả
+
+            if (isBookBorrowed)
+            {
+                // Nếu sách đang được mượn, hiển thị thông báo lỗi
+                TempData["ErrorMessage"] = "Không thể xóa sách vì hiện có người đang mượn.";
+                return RedirectToAction("Index");
+            }
+
+            // Nếu không có ai mượn, tiến hành xóa sách
+            _context.Books.Remove(book);
+            _context.SaveChanges();
+
+            TempData["SuccessMessage"] = "Xóa sách thành công.";
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {

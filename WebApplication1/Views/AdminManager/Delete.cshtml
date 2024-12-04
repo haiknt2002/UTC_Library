@@ -131,6 +131,19 @@
             }
         </div>
     </div>
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
 
     <br />
     <div class="btn btn-sm btn-secondary" data-toggle='tooltip' title='Back to book list'>
