@@ -10,7 +10,7 @@
 {
     @Html.AntiForgeryToken()
     <br />
-    <h4>Update book</h4>
+    <h4>Cập nhật dữ liệu</h4>
     <hr />
     <div class="col-6 offset-3 card">
         <br />
@@ -18,7 +18,7 @@
         @Html.HiddenFor(model => model.BookId)
         <div class="form-row form-group">
             <div class="col">
-                @Html.LabelFor(model => model.BookTitle, htmlAttributes: new { @class = "control-label" })
+                @Html.LabelFor(model => model.BookTitle, "Tiêu đề", htmlAttributes: new { @class = "control-label" })
 
                 @Html.EditorFor(model => model.BookTitle, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BookTitle, "", new { @class = "text-danger" })
@@ -26,7 +26,7 @@
             </div>
 
             <div class="col">
-                @Html.LabelFor(model => model.BookCategory, htmlAttributes: new { @class = "control-label" })
+                @Html.LabelFor(model => model.BookCategory, "Thể loại", htmlAttributes: new { @class = "control-label" })
 
                 @Html.DropDownListFor(model => model.BookCategory, new List<SelectListItem> {
                 new SelectListItem{ Text="Action", Value="Action"},
@@ -42,7 +42,7 @@
         </div>
         <div class="form-row form-group">
             <div class="col">
-                @Html.LabelFor(model => model.BookAuthor, htmlAttributes: new { @class = "control-label" })
+                @Html.LabelFor(model => model.BookAuthor, "Tác giả", htmlAttributes: new { @class = "control-label" })
 
                 @Html.EditorFor(model => model.BookAuthor, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BookAuthor, "", new { @class = "text-danger" })
@@ -50,7 +50,7 @@
             </div>
 
             <div class="col">
-                @Html.LabelFor(model => model.BookCopies, htmlAttributes: new { @class = "control-label" })
+                @Html.LabelFor(model => model.BookCopies,"Số lượng", htmlAttributes: new { @class = "control-label" })
 
                 @Html.EditorFor(model => model.BookCopies, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BookCopies, "", new { @class = "text-danger" })
@@ -59,7 +59,7 @@
         </div>
         <div class="form-row form-group">
             <div class="col">
-                @Html.LabelFor(model => model.BookPub, htmlAttributes: new { @class = "control-label" })
+                @Html.LabelFor(model => model.BookPub,"Nhà xuất bản", htmlAttributes: new { @class = "control-label" })
 
                 @Html.EditorFor(model => model.BookPub, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BookPub, "", new { @class = "text-danger" })
@@ -67,7 +67,7 @@
             </div>
 
             <div class="col">
-                @Html.LabelFor(model => model.BookPubName, htmlAttributes: new { @class = "control-label" })
+                @Html.LabelFor(model => model.BookPubName,"Chủ NXB", htmlAttributes: new { @class = "control-label" })
 
                 @Html.EditorFor(model => model.BookPubName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BookPubName, "", new { @class = "text-danger" })
@@ -76,7 +76,7 @@
         </div>
         <div class="form-row form-group">
             <div class="col">
-                @Html.LabelFor(model => model.BookISBN, htmlAttributes: new { @class = "control-label" })
+                @Html.LabelFor(model => model.BookISBN,"ISBN", htmlAttributes: new { @class = "control-label" })
 
                 @Html.EditorFor(model => model.BookISBN, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BookISBN, "", new { @class = "text-danger" })
@@ -84,7 +84,7 @@
             </div>
 
             <div class="col">
-                @Html.LabelFor(model => model.Copyright, htmlAttributes: new { @class = "control-label" })
+                @Html.LabelFor(model => model.Copyright,"Xuất bản", htmlAttributes: new { @class = "control-label" })
 
                 @Html.EditorFor(model => model.Copyright, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Copyright, "", new { @class = "text-danger" })
@@ -93,7 +93,7 @@
         </div>
         <div class="form-row form-group">
             <div class="col">
-                @Html.LabelFor(model => model.DateAdded, htmlAttributes: new { @class = "control-label" })
+                @Html.LabelFor(model => model.DateAdded,"Ngày thêm", htmlAttributes: new { @class = "control-label" })
 
                 @Html.EditorFor(model => model.DateAdded, new { htmlAttributes = new { @class = "form-control datepicker" } })
                 @Html.ValidationMessageFor(model => model.DateAdded, "", new { @class = "text-danger" })
@@ -101,7 +101,7 @@
             </div>
 
             <div class="col">
-                @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label" })
+                @Html.LabelFor(model => model.Status,"Tình trạng", htmlAttributes: new { @class = "control-label" })
 
                 @Html.DropDownListFor(model => model.Status, new List<SelectListItem> {
                 new SelectListItem{ Text="New", Value="New"},
@@ -115,7 +115,7 @@
         <div class="form-group">
             <button onclick="" type="submit" value="Update" class="btn btn-primary btn-sm" data-toggle='tooltip' title='Update book'>
                 <i class="fas fa-check-circle"></i>
-                Update
+                Cập nhật
             </button>
         </div>
     </div>
@@ -124,7 +124,7 @@
 
 <div class="btn btn-sm btn-secondary" data-toggle='tooltip' title='Back to book list'>
     <i class="fas fa-long-arrow-alt-left"></i>
-    @Html.ActionLink("Back", "Index", null, new { @class = "", style = "text-decoration:none; color: white" })
+    @Html.ActionLink("Quay lại", "Index", null, new { @class = "", style = "text-decoration:none; color: white" })
 </div>
 <br />
 <br />
