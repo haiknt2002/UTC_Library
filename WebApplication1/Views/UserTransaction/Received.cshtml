@@ -36,7 +36,7 @@
                         <p style="margin-left:10px"></p>
                         <div onclick="returnBook()" class="btn btn-sm btn-danger" data-toggle='tooltip' title='Return book'>
                             <i class="fas fa-eraser"></i>
-                            @Html.ActionLink("Return", "ReturnReceived", new { tranId = item.TranId }, new { @class = "", style = "text-decoration:none; color: white" })
+                            @Html.ActionLink("Trả sách", "ReturnReceived", new { tranId = item.TranId }, new { @class = "", style = "text-decoration:none; color: white" })
                         </div>
                         <!--<div class="btn btn-sm btn-warning" data-toggle='tooltip' title='Read book'>
                             <i class="fas fa-book-open iconop"></i>

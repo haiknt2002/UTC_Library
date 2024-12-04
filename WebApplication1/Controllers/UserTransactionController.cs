@@ -37,7 +37,7 @@ namespace UTC_Library.Controllers
 
             if (!requestList.Any())
             {
-                HttpContext.Session.SetString("requestMessage", "Your Requested list is empty, Go to Borrow section for request a book.");
+                HttpContext.Session.SetString("requestMessage", "Bạn hiện chưa đăng kí mượn cuốn sách nào.");
             }
             else
             {
@@ -90,7 +90,7 @@ namespace UTC_Library.Controllers
 
             if (!rejectedList.Any())
             {
-                HttpContext.Session.SetString("rejectMessage", "Your Rejected list is empty, Wait for the admin to take action.");
+                HttpContext.Session.SetString("rejectMessage", "Bạn hiện chưa được xác nhận mượn cuốn sách nào. Liên hệ Admin để biết thêm chi tiết.");
             }
             else
             {
@@ -168,7 +168,7 @@ namespace UTC_Library.Controllers
 
             if (!receivedList.Any())
             {
-                HttpContext.Session.SetString("receiveMessage", "Your Received list is empty, Wait for the admin to take action.");
+                HttpContext.Session.SetString("receiveMessage", "Bạn hiện chưa được xác nhận mượn cuốn sách nào. Liên hệ Admin để biết thêm chi tiết.");
             }
             else
             {
